@@ -1,0 +1,47 @@
+const yargs = require('yargs');
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }, 
+        body: {
+            describe: 'Note body',
+            demandOption: true,
+            type: 'string'
+        }, 
+    },
+    handler: (argv) => {    
+        console.log('adding', argv)
+    }
+});
+
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    handler: () => {
+        
+    }
+});
+
+yargs.command({
+    command: 'read',
+    describe: 'Read a note',
+    handler: () => {
+        
+    }
+});
+
+yargs.command({
+    command: 'list',
+    describe: 'List all note',
+    handler: () => {
+        
+    }
+});
+
+yargs.parse();
